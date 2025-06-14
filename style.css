@@ -84,6 +84,9 @@ header nav ul li:nth-child(2) a:hover{
     background-color: var(--orange);
     color: var(--black);
 }
+header nav ul li:nth-child(2) a span:nth-child(2){
+    display: none;
+}
 
 /* PRESENTATION */
 section#presentation{
@@ -99,23 +102,23 @@ section#presentation div:nth-child(2){
 }
 section#presentation p{
     font-size: 1.4rem;
-    -webkit-animation: display-top 900ms backwards ease-in-out;
-    animation: display-top 900ms backwards ease-in-out;
+    -webkit-animation: display-top 400ms backwards ease-in-out;
+    animation: display-top 400ms backwards ease-in-out;
 }
 section#presentation p:first-child{
     color: var(--orange);
 }
 section#presentation p:last-child{
     color: var(--white);
-    animation-delay: 1.5s;
+    animation-delay: 400ms;
 }
 section#presentation h1{
     font-family: 'Times New Roman', Times, serif;
     margin-block: 10px;
     font-size: 4rem;
     color: var(--white);
-    -webkit-animation: display-top 900ms 1s backwards ease-in-out;
-    animation: display-top 900ms 1s backwards ease-in-out;
+    -webkit-animation: display-top 400ms 200ms backwards ease-in-out;
+    animation: display-top 400ms 200ms backwards ease-in-out;
 }
 
 /* ANIMATIONS TEXTES */
@@ -190,5 +193,11 @@ section#presentation img{
         text-transform: uppercase;
         color: var(--white);
         padding: 14px;
+    }
+    header nav ul li:nth-child(2) a span:nth-child(1){
+        display: none;
+    }
+    header nav ul li:nth-child(2) a span:nth-child(2){
+        display: inline;
     }
 }
