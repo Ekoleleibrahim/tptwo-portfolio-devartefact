@@ -151,7 +151,7 @@ section#presentation img{
 }
 
 
-@media (width <= 1024px)  {
+@media (max-width: 1024px)  {
     /* PART HEADER */
     header{
         padding: 30px 24px;
@@ -173,14 +173,14 @@ section#presentation img{
         text-align: center;
     }
     section#presentation h1 span{
-        display: inline
-    };
+        display: inline;
+    }
     section#presentation div:nth-child(2){
         display: none;
     }
 }
 
-@media (width <= 450px) {
+@media (max-width: 450px) {
     /* PART HEADER */
     header{
         justify-content: flex-end;
