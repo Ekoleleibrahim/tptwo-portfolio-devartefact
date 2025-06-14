@@ -148,7 +148,7 @@ section#presentation img{
 }
 
 
-@media (width <= 1024px)  {
+@media (max-width: 1024px)  {
     /* PART HEADER */
     header{
         padding: 30px 24px;
@@ -177,7 +177,7 @@ section#presentation img{
     }
 }
 
-@media (width <= 450px) {
+@media (max-width: 450px) {
     /* PART HEADER */
     header{
         justify-content: flex-end;
