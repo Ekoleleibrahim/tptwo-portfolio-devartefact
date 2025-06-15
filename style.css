@@ -9,6 +9,7 @@
     --white: #FFF;
     --black: #000;
     --blaucous: #17244b;
+    --slate: #09122c;
 }
 
 ::selection{
@@ -17,8 +18,9 @@
 }
 
 body{
-    background-color: #09122c;
-    font-family: sans-serif;
+    background-color: var(--slate);
+    background-attachment: fixed;
+    font-family: "Montserrat", sans-serif;
     min-height: 100vh;
 }
 
@@ -33,6 +35,9 @@ ul{
 img{
     width: 100%;
     object-fit: cover;
+}
+svg{
+    width: 18px;
 }
 h1{
     font-size: 2.625rem;
@@ -62,6 +67,10 @@ p{
     animation-timeline: view();
     animation-range: entry 20% cover 100vh;
 }
+#competences,
+#projets{
+    padding: 100px 150px;
+}
 
 /* PART HEADER */
 header#main-header{
@@ -70,10 +79,10 @@ header#main-header{
     justify-content: space-between;
 }
 header#main-header #title{
-    font-size: 2rem;
+    font-size: 2.8rem;
     color: var(--orange);
     font-weight: bold;
-    font-family:'Times New Roman', Times, serif;
+    font-family:'Sevillana', Times, serif;
 }
 header#main-header nav ul{
     display: flex;
@@ -159,7 +168,6 @@ section#presentation img{
 
 /* COMPETENCES*/
 #competences{
-    padding: 100px 150px;
     background-color: var(--blaucous);
 }
 #competences .flex-competences{
@@ -213,7 +221,109 @@ section#presentation img{
     color: var(--white);
 }
 
-
+/* PROJETS */
+#projets .flex-projets{
+    padding: 0px 100px 50px 0;
+    overflow-x: scroll;
+    margin-top: 50px;
+    gap: 30px;
+    -webkit-animation: fadeUp both;
+    animation: fadeUp both;
+    animation-timeline: view(50% 10%);
+    animation-range: entry 20% cover 100vh;
+}
+#projets h1{
+    -o-animation: display-top;
+    -webkit-animation: display-top both;
+    animation: display-top;
+    animation-timeline: view();
+    animation-range: entry 20% cover 100vh;
+}
+#projets .flex-projets article{
+    max-width: 450px;
+    flex-shrink: 0;
+    background-color: var(--blaucous);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+}
+#projets .flex-projets article::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+    transform-origin: 50% top;
+    background-color: var(--orange);
+    transition: transform 150ms ease-in-out;
+}
+#projets .flex-projets article:hover::before{
+    transform: scaleY(4.5);
+}
+#projets .flex-projets article img{
+    border-radius: 10px;
+}
+#projets .flex-projets article .text-content{
+    padding: 40px 30px;
+}
+#projets .flex-projets article h2{
+    margin-top: 10px;
+}
+#projets .flex-projets article .text-orange{
+    font-size: 0.875rem;
+}
+#projets .flex-projets article p{
+    color: var(--white);
+}
+#projets .flex-projets article .ctn-btn{
+    margin-top: 30px;
+}
+#projets .flex-projets article .ctn-btn a{
+    display: inline-flex;
+    align-items: center;
+    color: var(--orange);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    padding: 10px 24px;
+    border: 1px solid var(--orange);
+    position: relative;
+    overflow: hidden;
+}
+#projets .flex-projets article .ctn-btn a svg{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 300ms ease-in-out;
+}
+#projets .flex-projets article .ctn-btn a:hover svg{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(5px);
+}
+#projets .flex-projets article .ctn-btn a:hover{
+    color: var(--black);
+    z-index: 1;
+}
+#projets .flex-projets article .ctn-btn a::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--orange);
+    opacity: 0;
+    transition: opacity 400ms linear;
+}
+#projets .flex-projets article .ctn-btn a:hover::before{
+    opacity: 1;
+}
 /* LES ANIMATIONS */
 @-webkit-keyframes display-top {
     0%{
@@ -281,6 +391,15 @@ section#presentation img{
     }
     section#presentation div:nth-child(2){
         align-self: flex-end;
+    }
+
+    /* PROJETS */
+    #projets{
+        padding-inline: 24px;
+    }
+    #projets .flex-projets{
+        width: 90vw;
+        padding-left: 0px;
     }
 }
 
