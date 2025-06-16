@@ -5,11 +5,14 @@
 }
 
 :root{
-    --orange: #F2AE66;
+    --orange: #ffc576;
+    --orange_fort: rgba(255,197,118,.749);
     --white: #FFF;
     --black: #000;
-    --blaucous: #17244b;
-    --slate: #09122c;
+    --blaucous: rgba(49,53,82,.71);
+    --blaucous_claire: #313552;
+    --slate: #1f2235;
+    --gray: #9899a8;
 }
 
 ::selection{
@@ -68,7 +71,8 @@ p{
     animation-range: entry 20% cover 100vh;
 }
 #competences,
-#projets{
+#projets,
+#contact{
     padding: 100px 150px;
 }
 
@@ -126,7 +130,7 @@ header#main-header nav ul li:nth-child(2) a span:nth-child(2){
     display: none;
 }
 
-/* PRESENTATION */
+/* SECTION PRESENTATION */
 section#presentation{
     padding: 10px 150px;
     display: flex;
@@ -166,7 +170,7 @@ section#presentation img{
     width: 350px;
 }
 
-/* COMPETENCES*/
+/* SECTION COMPETENCES*/
 #competences{
     background-color: var(--blaucous);
 }
@@ -221,7 +225,7 @@ section#presentation img{
     color: var(--white);
 }
 
-/* PROJETS */
+/* SECTION PROJETS */
 #projets .flex-projets{
     padding: 0px 100px 50px 0;
     overflow-x: scroll;
@@ -290,13 +294,14 @@ section#presentation img{
     font-size: 0.875rem;
     padding: 10px 24px;
     border: 1px solid var(--orange);
+    border-radius: 2px;
     position: relative;
     overflow: hidden;
 }
 #projets .flex-projets article .ctn-btn a svg{
     opacity: 0;
     visibility: hidden;
-    transition: all 300ms ease-in-out;
+    transition: all 500ms ease-in-out;
 }
 #projets .flex-projets article .ctn-btn a:hover svg{
     opacity: 1;
@@ -319,7 +324,7 @@ section#presentation img{
     z-index: -1;
     background-color: var(--orange);
     opacity: 0;
-    transition: opacity 400ms linear;
+    transition: opacity 200ms linear;
 }
 #projets .flex-projets article .ctn-btn a:hover::before{
     opacity: 1;
@@ -367,6 +372,69 @@ section#presentation img{
     }
 }
 
+/* SECTION CONTACT */
+#contact{
+    background-color: var(--blaucous);
+}
+#contact .flex-links-contact{
+    margin-top: 50px;
+    gap: 40px;
+}
+#contact a{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--orange_fort);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+#contact a:hover{
+    z-index: 1;
+}
+#contact a::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    background-color: var(--orange_fort);
+    transition: opacity 200ms ease-in-out;
+}
+#contact a:hover::before{
+    opacity: 1;
+}
+#contact a p{
+    color: var(--orange);
+}
+#contact a:hover p{
+    color: var(--black);
+}
+#contact h2{
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 5px !important;
+}
+#contact a:hover h2{
+    color: var(--black);
+}
+
+/* SECTION FOOTER*/
+footer{
+    background-color: var(--blaucous_claire);
+    padding: 50px 5px;
+}
+footer p{
+    text-align: center;
+    color: var(--gray);
+    font-size: 0.875rem;
+}
+
 /* LES MEDIAS QUERIES */
 
 @media (max-width: 1024px)  {
@@ -375,14 +443,17 @@ section#presentation img{
         padding: 30px 24px;
     }
 
-    /* COMPETENCES */
-    #competences{
+    /* SECTION COMPETENCES  et SECTION PROJETS */
+    #competences,
+    #projets,
+    #contact{
         padding-inline: 24px;
     }
+
 }
 
 @media (max-width: 768px) {
-    /* PRESENTATION */
+    /* SECTION PRESENTATION */
     section#presentation{
         padding: 50px 24px;
         display: flex;
@@ -393,10 +464,7 @@ section#presentation img{
         align-self: flex-end;
     }
 
-    /* PROJETS */
-    #projets{
-        padding-inline: 24px;
-    }
+    /* SECTION PROJETS */
     #projets .flex-projets{
         width: 90vw;
         padding-left: 0px;
@@ -404,7 +472,7 @@ section#presentation img{
 }
 
 @media (max-width: 640px) {
-    /* PRESENTATION */
+    /* SECTION PRESENTATION */
     section#presentation{
         min-height: 100vh;
         align-items: center;
@@ -419,7 +487,7 @@ section#presentation img{
         text-align: center;
     }
 
-    /* COMPETENCES */
+    /* SECTION COMPETENCES */
     #competences .flex-competences{
         flex-direction: column;
         gap: 30px;
@@ -428,6 +496,13 @@ section#presentation img{
     #competences .flex-competences article{
         width: 100%;
         align-self:baseline;
+    }
+
+    /* SECTION CONTACT */
+    #contact .flex-links-contact{
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 40px;
     }
 }
 
