@@ -237,7 +237,7 @@ section#presentation img{
     -webkit-animation: fadeUp both;
     -moz-animation: fadeUp both;
     animation: fadeUp both;
-    animation-timeline: view(50% 10%);
+    animation-timeline: view();
     animation-range: entry 20% cover 100vh;
 }
 #projets h1{
